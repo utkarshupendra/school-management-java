@@ -11,7 +11,7 @@ public class Student extends User {
     private float percentage;
     private Map<String, Integer> marks;
 
-    public Student(String name, String id, long contact, String address, int grade, char section, float percentage) {
+    public Student(String name, String id, long contact, String address, int grade, char section, float percentage, Map<String, Integer> marks) {
         this.setName(name);
         this.setId(id);
         this.setContact(contact);
@@ -19,6 +19,7 @@ public class Student extends User {
         this.grade = grade;
         this.section = section;
         this.percentage = percentage;
+        this.marks = marks;
     }
 
     public int getGrade() {

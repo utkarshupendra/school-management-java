@@ -8,8 +8,11 @@ import java.util.Map;
 
 public class SchoolManagementApplication {
     public static void main(String[] args) {
-        Student student1 = new Student("Himadri", "4", 987654321, "Kolkata", 11, 'A', 95);
-        Student student2 = new Student("Himadri", "4", 987654321, "Kolkata", 11, 'A', 95);
+        Map<String, Integer> marks = new HashMap<>();
+        marks.put("Maths", 98);
+        marks.put("Phy", 90);
+        Student student1 = new Student("Himadri", "4", 987654321, "Kolkata", 11, 'A', 95, marks);
+        Student student2 = new Student("Himadri", "4", 987654321, "Kolkata", 11, 'A', 95, marks);
         Teacher teacher = new Teacher("Arun", "1", 1234567890, "Hyderabad", 10000.0f, "B.Tech", ContractTenure.PERMANENT, "Associate Teacher", Department.ACADEMIC, "Maths");
 
         Map<String, Integer> map = new HashMap<>();
