@@ -42,8 +42,8 @@ public abstract class User {
 
     public abstract UserType getUserType();
 
-    @Override
+    /*@Override
     public String toString() {
         return "Name: "+getName() +", ID: "+getId();
-    }
+    }*/
 }

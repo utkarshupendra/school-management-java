@@ -2,11 +2,14 @@ package user;
 
 import enums.UserType;
 
+import java.util.Map;
+
 public class Student extends User {
     private static int passingMarks = 40;
     private int grade;
     private char section;
     private float percentage;
+    private Map<String, Integer> marks;
 
     public Student(String name, String id, long contact, String address, int grade, char section, float percentage) {
         this.setName(name);
@@ -50,5 +53,15 @@ public class Student extends User {
     public void evaluate(int marks) {
         if (marks > passingMarks)
             this.grade++;
+    }
+
+    @Override
+    public int hashCode() {
+        return Integer.parseInt(getId());
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        return this.getId().equals(((Student)o).getId());
     }
 }
