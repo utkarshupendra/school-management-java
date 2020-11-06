@@ -56,6 +56,10 @@ public class Student extends User {
             this.grade++;
     }
 
+    public void evaluate() {
+        this.grade++;
+    }
+
     @Override
     public int hashCode() {
         return Integer.parseInt(getId());

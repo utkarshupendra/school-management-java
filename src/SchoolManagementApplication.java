@@ -3,8 +3,11 @@ import enums.ContractTenure;
 import enums.Department;
 import user.Student;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
+import java.util.function.Consumer;
+import java.util.function.Predicate;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 public class SchoolManagementApplication {
     public static void main(String[] args) {
@@ -25,9 +28,111 @@ public class SchoolManagementApplication {
         map.remove("A");
         map.put("A", 6);
         map.put("B", 5);
+        map.put("C", 1);
+
+        Stack<String> stringStack = new Stack<>();
+        stringStack.push("A");
+        stringStack.push("B");
+
+        stringStack.pop();
+        stringStack.peek();
+        stringStack.elements();
+
+        LinkedList<String> linkedList = new LinkedList<>();
+        linkedList.add("A");
+        linkedList.add("B");
+        linkedList.remove();
+        //linkedList.remove(1);
+        //linkedList.get(1);
+
+
+
+        Queue<String> queue = new LinkedList<>();
+        queue.add("A");
+        queue.add("B");
+        String s = queue.peek();
+        System.out.println(s);
+        s = queue.poll();
+        System.out.println(s);
+
+        //queue.remove("A")
+
+
+
+
+        for (int i = 0; i < map.size(); i++) {
+            //list.get(i)
+        }
+        List<String> strings = new ArrayList<>();
+        //
+        //
+
+        for (Map.Entry entry : map.entrySet()) {
+            System.out.println(entry.getKey());
+            System.out.println(entry.getValue());
+            System.out.println();
+        }
+
+
+        Set<Student> studentSet = new HashSet<>();
+        studentSet.add(student1);
+        studentSet.add(student2);
+        studentSet.contains(student1);
+
+        List<Student> studentList = new ArrayList<>();
+        if (!(studentList.contains(student1))) {
+            studentList.add(student1);
+            studentList.contains(student1);
+        }
 
         System.out.println(student1.getUserType());
         student1.evaluate(30);
         student1.evaluate(90);
+
+        //for
+        //while
+        //do while
+
+        //Streams API
+
+        List<String> strings1 = new ArrayList<>();
+        strings1.add("A");
+        strings1.add("B");
+        strings1.add("C");
+
+        for (String str : strings1) {
+            if (!(str.equals("B"))) {
+                strings1.remove(str);
+            }
+        }
+
+        strings1.stream().filter(s1 -> s1.equals("B")).sorted().collect(Collectors.toList());
+
+        studentIntegerMap.entrySet().stream().forEach(Map.Entry::getValue);
+
+        studentList.stream().forEach(Student::evaluate);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }
