@@ -1,8 +1,11 @@
+import db.PostgresManager;
 import employee.Teacher;
 import enums.ContractTenure;
 import enums.Department;
 import user.Student;
 
+import java.sql.Connection;
+import java.sql.Statement;
 import java.util.*;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
@@ -100,6 +103,13 @@ public class SchoolManagementApplication {
         strings1.add("B");
         strings1.add("C");
 
+        Iterator<String> iterator = strings1.iterator();
+        while (iterator.hasNext()) {
+            String a = iterator.next();
+            System.out.println(a);
+        }
+
+
         for (String str : strings1) {
             if (!(str.equals("B"))) {
                 strings1.remove(str);
@@ -112,14 +122,9 @@ public class SchoolManagementApplication {
 
         studentList.stream().forEach(Student::evaluate);
 
-
-
-
-
-
-
-
-
+        Connection connection = PostgresManager.getConnection();
+        /*Statement statement = connection.createStatement();
+        statement.executeQuery("seelct * from weather")*/
 
 
 
