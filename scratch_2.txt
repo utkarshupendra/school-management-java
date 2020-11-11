@@ -1,0 +1,20 @@
+Students
+Teachers
+Admin Staff
+Support Staff
+
+User - common
+S,T,A,SS
+
+User:
+name, ID, contact, address, userType
+
+Employee extends User:
+salary, designation, department
+
+Teacher extends Employee
+Admin
+Support
+
+Student extends User
+
